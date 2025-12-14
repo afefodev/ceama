@@ -39,6 +39,7 @@ import kahootVerified from "@/assets/kahoot-verified.png";
 import teacherDiana from "@/assets/teacher-diana.png";
 import teacherLiliana from "@/assets/teacher-liliana.png";
 import teacherGiovanna from "@/assets/teacher-giovanna.png";
+import teacherKatia from "@/assets/teacher-katia.png";
 import teacherClass1 from "@/assets/gallery/teacher-class-1.png";
 import communicationClass from "@/assets/gallery/communication-class.jpg";
 import mathClass from "@/assets/gallery/math-class.jpg";
@@ -68,40 +69,58 @@ export const Hero = () => {
           alt="CEAMA Academia Classroom"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
       </div>
 
-      <div className="container mx-auto px-4 z-10 text-center">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h1 className="text-6xl md:text-8xl font-bold text-primary-foreground animate-fade-in">
-            Bienvenido a CEAMA
-          </h1>
-          <p className="text-2xl md:text-3xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Centro de Excelencia Académica en Matemática y Comunicación
-          </p>
-          <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-3xl mx-auto">
-            Desarrollamos habilidades esenciales para el éxito académico y
-            profesional a través de programas especializados en comunicación
-            efectiva y razonamiento matemático.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-            <Button
-              size="lg"
-              variant="secondary"
-              onClick={() => scrollToSection("cursos")}
-              className="text-lg"
-            >
-              Ver Cursos
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("contacto")}
-              className="text-lg bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-            >
-              Contáctanos
-            </Button>
+      <div className="container mx-auto px-4 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Contenido izquierda */}
+          <div className="space-y-4 text-left">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground animate-fade-in tracking-tight">
+              VACACIONES ÚTILES
+            </h1>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-orange-500 animate-fade-in tracking-tight">
+              CICLO VACACIONAL 2026
+            </h2>
+            <h3 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground tracking-tight">
+              CEAMA
+            </h3>
+            <p className="text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 tracking-tight">
+              Centro de Excelencia Académica en Matemática y Comunicación
+            </p>
+            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-500 tracking-tight">
+              MATRÍCULAS ABIERTAS!
+            </p>
+            <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+              TRUJILLO
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+              <Button
+                size="lg"
+                onClick={() => window.location.href = '/estudiantes/registrar'}
+                className="text-2xl md:text-3xl font-bold px-12 py-8 bg-orange-500 hover:bg-orange-600 text-white rounded-xl shadow-2xl transform transition hover:scale-105"
+              >
+                INSCRIBETE AHORA
+                <ArrowRight className="ml-3 h-7 w-7" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("contacto")}
+                className="text-lg md:text-xl font-bold px-6 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-xl transform transition hover:scale-105"
+              >
+                CONTÁCTANOS
+              </Button>
+            </div>
+          </div>
+
+          {/* Imagen derecha */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/static/landing/img/VERANO 2026.png"
+              alt="Vacacional Verano 2026"
+              className="max-w-full h-auto rounded-lg shadow-2xl"
+            />
           </div>
         </div>
       </div>
@@ -266,11 +285,11 @@ export const Courses = () => {
               </p>
               <ul className="space-y-2">
                 {[
-                  "Operaciones básicas y mental",
-                  "Problemas de razonamiento lógico",
-                  "Geometría con figuras y formas",
-                  "Juegos matemáticos",
-                  "Fracciones y números decimales",
+                  "Habilidad Operativa (Ejerecicios)",
+                  "Habilidad de cálculo mental (Propiedades)",
+                  "Resolución de problemas matemáticos.",
+                  "Juegos matemáticos (Kahoot)",
+                  "Club de matemática (Preparación Concursos)",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-education-secondary shrink-0 mt-0.5" />
@@ -444,7 +463,7 @@ export const Team = () => {
             <h3 className="text-3xl font-bold text-center text-foreground mb-8">
               Nuestro Equipo Docente
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
               <Card className="hover:shadow-xl transition-all">
                 <CardContent className="p-6 text-center">
                   <div className="flex flex-col items-center">
@@ -507,6 +526,29 @@ export const Team = () => {
                     </h4>
                     <p className="text-sm text-muted-foreground mb-2">
                       Docente especialista en primaria
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Colegio Rafael Narvaez Cadenillas
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-xl transition-all">
+                <CardContent className="p-6 text-center">
+                  <div className="flex flex-col items-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-education-secondary shadow-lg">
+                      <img
+                        src={teacherKatia}
+                        alt="Katia Alfaro"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Katia Alfaro
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Docente especialista en el área de Comunicación
                     </p>
                     <p className="text-xs text-muted-foreground">
                       Colegio Rafael Narvaez Cadenillas
