@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-reemplaza-esto-en-producci
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,https://ceama-ceama.vphihk.easypanel.host').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,https://ceama.lat').split(',')
 
 INSTALLED_APPS = [
     'jazzmin',
