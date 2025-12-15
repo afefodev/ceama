@@ -90,9 +90,9 @@
     const montoInput   = document.getElementById('id_monto');
 
     const MENSAJES_METODO = {
-      transferencia: 'Transfiere a la cuenta: 00257019713717601206',
-      yape:          'Yapea al número: 904 929 929',
-      plin:          'Envía tu Plin al número: 904 929 929',
+      transferencia: 'Transfiere a la cuenta BCP: 57075220682040 Cuenta interbancaria es 00257017522068204004.',
+      yape:          'Yapea al número: 906 601 866 - Alfredo Vásquez',
+      plin:          'Envía tu plin al número: 906 601 866 - Alfredo Vásquez',
     };
 
     function actualizarMensajeMetodo() {
