@@ -308,7 +308,7 @@ class PagoAdmin(admin.ModelAdmin):
         # Por asignación (si la inscripción tiene asignacion)
         por_asignacion = (
             pagos_qs
-            .values('inscripcion__asignacion__id', 'inscripcion__asignacion__plan__nombre')
+            .values('inscripcion__asignacion__id', 'inscripcion__asignacion__plan__nombre', 'inscripcion__asignacion__grado')
             .annotate(total=Sum('monto'), count=Count('id'))
             .order_by('-total')
         )
