@@ -30,11 +30,14 @@
       <div style="flex:1;min-width:300px;padding:12px;border:1px solid #e6e6e6;background:#fff;border-radius:6px;">
         <h3>Recaudo por asignación</h3>
         <table class="table table-striped" style="width:100%;">
-          <thead><tr><th>Asignación (Plan)</th><th>Total</th><th>Pagos</th></tr></thead>
+          <thead><tr><th>Asignación (Plan / Grado)</th><th>Total</th><th>Pagos</th></tr></thead>
           <tbody>
             {% for a in por_asignacion %}
               <tr>
-                <td>{{ a.inscripcion__asignacion__plan__nombre|default:'(sin asignación)' }}</td>
+                <td>
+                  {{ a.inscripcion__asignacion__plan__nombre|default:'(sin asignación)' }}
+                  {% if a.inscripcion__asignacion__grado %} - {{ a.inscripcion__asignacion__grado }}{% endif %}
+                </td>
                 <td>S/ {{ a.total|floatformat:2 }}</td>
                 <td>{{ a.count }}</td>
               </tr>
@@ -44,6 +47,10 @@
           </tbody>
         </table>
       </div>
+    </div>
+
+    <div style="margin-top:24px;padding:12px;">
+      <a href="{% url 'admin:pagos_pago_changelist' %}" class="button" style="padding:8px 16px;text-decoration:none;">← Volver a Pagos</a>
     </div>
   </div>
 {% endblock %}
