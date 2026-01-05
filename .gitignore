@@ -56,3 +56,4 @@ Thumbs.db
 # Django
 media/
 staticfiles/
+test_settings.py

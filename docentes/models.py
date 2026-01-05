@@ -93,7 +93,8 @@ class Asignacion(models.Model):
         )
     def __str__(self):
         profs = ', '.join(str(p) for p in self.profesores.all())
-        return f"{profs} → {getattr(self.plan, 'nombre', 'Plan?')} ({self.horario} / {self.aula})"
+        grado_str = f" - {self.grado}" if self.grado else ""
+        return f"{profs} → {getattr(self.plan, 'nombre', 'Plan?')}{grado_str} ({self.horario} / {self.aula})"
 
     class Meta:
         verbose_name = "Asignación"
